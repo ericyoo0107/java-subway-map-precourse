@@ -26,17 +26,9 @@ public class SubwayReport {
 		System.out.println("## 원하는 기능을 선택하세요.");
 	}
 
-	public void manageLine()
-	{
-		System.out.println("## 구간 관리 화면");
-		System.out.println("1. 구간 등록");
-		System.out.println("2. 구간 삭제");
-		System.out.println("B. 돌아가기");
-		System.out.println();
-		System.out.println("## 원하는 기능을 선택하세요.");
-	}
 
-	public void manageSection() {
+
+	public void manageLine() {
 		System.out.println("## 노선 관리 화면");
 		System.out.println("1. 노선 등록");
 		System.out.println("2. 노선 삭제");
@@ -45,7 +37,15 @@ public class SubwayReport {
 		System.out.println();
 		System.out.println("## 원하는 기능을 선택하세요.");
 	}
-
+	public void manageSection()
+	{
+		System.out.println("## 구간 관리 화면");
+		System.out.println("1. 구간 등록");
+		System.out.println("2. 구간 삭제");
+		System.out.println("B. 돌아가기");
+		System.out.println();
+		System.out.println("## 원하는 기능을 선택하세요.");
+	}
 	public void showAllElement()
 	{
 		System.out.println("## 지하철 노선도");
@@ -91,13 +91,14 @@ public class SubwayReport {
 						System.out.println("## 등록할 노선 이름을 입력하세요.");
 						String line = scanner.nextLine();
 						SubwayLine subwayLine = new SubwayLine(line);
-						subway.addSubwayLine(subwayLine);
-						System.out.println("## 등록할 노선의 상행 종점역 이름을 입력하세요.");
-						String upLine = scanner.nextLine();
-						subway.addUpLine(upLine, subwayLine);
-						System.out.println("## 등록할 노선의 하행 종점역 이름을 입력하세요.");
-						String downLine = scanner.nextLine();
-						subway.addDownLine(downLine, subwayLine);
+						if(subway.addSubwayLine(subwayLine)) {
+							System.out.println("## 등록할 노선의 상행 종점역 이름을 입력하세요.");
+							String upLine = scanner.nextLine();
+							subway.addUpLine(upLine, subwayLine);
+							System.out.println("## 등록할 노선의 하행 종점역 이름을 입력하세요.");
+							String downLine = scanner.nextLine();
+							subway.addDownLine(downLine, subwayLine);
+						}
 						break;
 					case "2":
 						System.out.println("## 삭제할 노선 이름을 입력하세요.");

@@ -4,14 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6382a338-82b8-4f91-a510-ff1eaaac222e" name="변경" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SubwayMap.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
+    <list default="true" id="6382a338-82b8-4f91-a510-ff1eaaac222e" name="변경" comment="1차 완성 (디폴트 수정)">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Subway.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Subway.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/SubwayLine.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/SubwayLine.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/SubwayReport.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/SubwayReport.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/메모용.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/메모용.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -60,8 +58,23 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1666366252955</updated>
-      <workItem from="1666366254838" duration="29275000" />
+      <workItem from="1666366254838" duration="31685000" />
     </task>
+    <task id="LOCAL-00001" summary="1차 완성 (디폴트 수정)">
+      <created>1666539102242</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1666539102242</updated>
+    </task>
+    <task id="LOCAL-00002" summary="1차 완성 (디폴트 수정)">
+      <created>1666539129737</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1666539129737</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -77,6 +90,10 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="1차 완성 (디폴트 수정)" />
+    <option name="LAST_COMMIT_MESSAGE" value="1차 완성 (디폴트 수정)" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

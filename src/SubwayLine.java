@@ -41,4 +41,12 @@ public class SubwayLine {
 		this.downLineLast = downLineLast;
 		stationsOnLine.addLast(downLineLast);
 	}
+
+	public void showStationsOnLine()
+	{
+		for(SubwayStation station : stationsOnLine)
+		{
+			System.out.println("[INFO] " +station.getStationName());
+		}
+	}
 }

@@ -93,17 +93,18 @@ public class Subway  {
 		}
 	}
 	//지하철 노선 등록
-	public void addSubwayLine(SubwayLine subwayLine) {
+	public boolean addSubwayLine(SubwayLine subwayLine) {
 		if(stations != null) {
 			for (SubwayLine s : lines) {
 				if (s.getLineName().equals(subwayLine.getLineName())) {
 					System.out.println("[ERROR] 이미 등록된 호선 이름입니다.");
-					return;
+					return false;
 				}
 			}
 			lines.add(subwayLine);
 			System.out.println("[INFO] 호선이 등록되었습니다.");
 		}
+		return true;
 	}
 
 	//지하철 노선 삭제
@@ -222,14 +223,12 @@ public class Subway  {
 
 	public void showAllElement()
 	{
-		for(SubwayLine line : lines)
+		for(int i=0; i< lines.size(); i++)
 		{
+			SubwayLine line = lines.get(i);
 			System.out.println("[INFO] " + line.getLineName());
 			System.out.println("[INFO] ---");
-			for(SubwayStation station : stations)
-			{
-				System.out.println("[INFO] " + station.getStationName());
-			}
+			line.showStationsOnLine();
 			System.out.println();
 		}
 	}
