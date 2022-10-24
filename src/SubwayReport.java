@@ -1,10 +1,11 @@
 import java.io.IOException;
 import java.util.Scanner;
+
 public class SubwayReport {
 	Subway subway = Subway.getInstance();
 	private Scanner scanner = new Scanner(System.in);
-	public void ShowMain()
-	{
+
+	public void ShowMain() {
 		System.out.println("## 메인화면");
 		System.out.println("1. 역 관리");
 		System.out.println("2. 노선 관리");
@@ -15,8 +16,7 @@ public class SubwayReport {
 		System.out.println("## 원하는 기능을 선택하세요.");
 	}
 
-	public void manageStation()
-	{
+	public void manageStation() {
 		System.out.println("## 역 관리 화면");
 		System.out.println("1. 역 등록");
 		System.out.println("2. 역 삭제");
@@ -25,8 +25,6 @@ public class SubwayReport {
 		System.out.println();
 		System.out.println("## 원하는 기능을 선택하세요.");
 	}
-
-
 
 	public void manageLine() {
 		System.out.println("## 노선 관리 화면");
@@ -37,8 +35,8 @@ public class SubwayReport {
 		System.out.println();
 		System.out.println("## 원하는 기능을 선택하세요.");
 	}
-	public void manageSection()
-	{
+
+	public void manageSection() {
 		System.out.println("## 구간 관리 화면");
 		System.out.println("1. 구간 등록");
 		System.out.println("2. 구간 삭제");
@@ -46,18 +44,17 @@ public class SubwayReport {
 		System.out.println();
 		System.out.println("## 원하는 기능을 선택하세요.");
 	}
-	public void showAllElement()
-	{
+
+	public void showAllElement() {
 		System.out.println("## 지하철 노선도");
 		subway.showAllElement();
 	}
+
 	public void reportMain() throws IOException {
 		ShowMain();
 		String mainNum = scanner.nextLine();
-		switch (mainNum)
-		{
-			case "1":
-			{
+		switch (mainNum) {
+			case "1": {
 				manageStation();
 				String stationNum = scanner.nextLine();
 				switch (stationNum) {
@@ -91,7 +88,7 @@ public class SubwayReport {
 						System.out.println("## 등록할 노선 이름을 입력하세요.");
 						String line = scanner.nextLine();
 						SubwayLine subwayLine = new SubwayLine(line);
-						if(subway.addSubwayLine(subwayLine)) {
+						if (subway.addSubwayLine(subwayLine)) {
 							System.out.println("## 등록할 노선의 상행 종점역 이름을 입력하세요.");
 							String upLine = scanner.nextLine();
 							subway.addUpLine(upLine, subwayLine);
@@ -149,7 +146,7 @@ public class SubwayReport {
 				showAllElement();
 			}
 			break;
-			case "Q":{
+			case "Q": {
 				System.exit(0);
 			}
 			break;

@@ -1,10 +1,10 @@
 import java.util.LinkedList;
 
 public class SubwayLine {
-	private String lineName="";
+	private String lineName = "";
 	private LinkedList<SubwayStation> stationsOnLine = new LinkedList<SubwayStation>();
-	private	SubwayStation upLineLast; // iterator 가 나을려나?
-	private	SubwayStation downLineLast;
+	private SubwayStation upLineLast; // iterator 가 나을려나?
+	private SubwayStation downLineLast;
 
 	public SubwayLine(String lineName) {
 		if (lineName.length() > 2)
@@ -17,18 +17,16 @@ public class SubwayLine {
 		return lineName;
 	}
 
-	public void setStationsOnLine(SubwayStation station, int idx)
-	{
+	public void setStationsOnLine(SubwayStation station, int idx) {
 		stationsOnLine.add(idx, station);
-		upLineLast =  stationsOnLine.getFirst();
+		upLineLast = stationsOnLine.getFirst();
 		downLineLast = stationsOnLine.getLast();
 	}
 
-	public void deleteStationsOnLine(SubwayStation station)
-	{
+	public void deleteStationsOnLine(SubwayStation station) {
 		int idx = stationsOnLine.indexOf(station);
 		stationsOnLine.remove(idx);
-		upLineLast =  stationsOnLine.getFirst();
+		upLineLast = stationsOnLine.getFirst();
 		downLineLast = stationsOnLine.getLast();
 	}
 
@@ -42,11 +40,9 @@ public class SubwayLine {
 		stationsOnLine.addLast(downLineLast);
 	}
 
-	public void showStationsOnLine()
-	{
-		for(SubwayStation station : stationsOnLine)
-		{
-			System.out.println("[INFO] " +station.getStationName());
+	public void showStationsOnLine() {
+		for (SubwayStation station : stationsOnLine) {
+			System.out.println("[INFO] " + station.getStationName());
 		}
 	}
 }
