@@ -4,10 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6382a338-82b8-4f91-a510-ff1eaaac222e" name="변경" comment="함수길이 15 넘지 않게 subway 리펙토링">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Subway.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Subway.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/SubwayLine.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/SubwayLine.java" afterDir="false" />
+    <list default="true" id="6382a338-82b8-4f91-a510-ff1eaaac222e" name="변경" comment="구간 관리에서 구간 삭제할때 역자체는 존재하지만 그 구간에 없는 경우 에러가 발생하는 문제 해결">
       <change beforePath="$PROJECT_DIR$/src/메모용.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/메모용.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -87,7 +84,14 @@
       <option name="project" value="LOCAL" />
       <updated>1666606176300</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="구간 관리에서 구간 삭제할때 역자체는 존재하지만 그 구간에 없는 경우 에러가 발생하는 문제 해결">
+      <created>1666607944791</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1666607944791</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -108,7 +112,8 @@
     <MESSAGE value="1차 완성 (디폴트 수정)" />
     <MESSAGE value="main이름 변경" />
     <MESSAGE value="함수길이 15 넘지 않게 subway 리펙토링" />
-    <option name="LAST_COMMIT_MESSAGE" value="함수길이 15 넘지 않게 subway 리펙토링" />
+    <MESSAGE value="구간 관리에서 구간 삭제할때 역자체는 존재하지만 그 구간에 없는 경우 에러가 발생하는 문제 해결" />
+    <option name="LAST_COMMIT_MESSAGE" value="구간 관리에서 구간 삭제할때 역자체는 존재하지만 그 구간에 없는 경우 에러가 발생하는 문제 해결" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
