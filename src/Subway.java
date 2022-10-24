@@ -57,31 +57,38 @@ public class Subway {
 		}
 	}
 
-	//지하철 역 등록
+	// 역이름을 입력받아서 역 list의 index를 반환
+	public int findStationIdx(String subwayStation)
+	{
+		int idx = stations.size();
+		for (int i = idx - 1; i >= 0; i--) {
+			if (stations.get(i).getStationName().equals(subwayStation)) {
+				return i;
+			}
+		}
+		return -1; //station이 없는경우
+	}
+
+	//지하철 역 추가
 	public void addSubwayStation(SubwayStation subwaystation) {
 		if (stations != null) {
-			for (SubwayStation s : stations) {
-				if (s.getStationName().equals(subwaystation.getStationName())) {
-					System.out.println("[ERROR] 이미 등록된 역 이름입니다.");
-					return;
-				}
+			if(findStationIdx(subwaystation.getStationName())!=-1) {
+				System.out.println("[ERROR] 이미 등록된 역 이름입니다.");
+				return;
 			}
 			stations.add(subwaystation);
 			System.out.println("[INFO] 지하철 역이 등록되었습니다.");
 		}
 	}
-
 	//지하철 역 삭제
 	public void deleteSubwayStation(String subwayStation) {
 		if (stations != null) {
-			int idx = stations.size();
-			for (int i = idx - 1; i >= 0; i--) {
-				if (stations.get(i).getStationName().equals(subwayStation)) {
-					stations.remove(i);
-					return;
-				}
+			int idx = findStationIdx(subwayStation);
+			if (idx == -1) {
+				System.out.println("[ERROR] 존재하지 않는 역 이름입니다.");
+				return;
 			}
-			System.out.println("[ERROR] 존재하지 않는 역 이름입니다.");
+			stations.remove(idx);
 		}
 	}
 
@@ -92,35 +99,39 @@ public class Subway {
 			}
 		}
 	}
-
+	public int findLineIdx(String subwayLine)
+	{
+		int idx = lines.size();
+		for (int i = idx - 1; i >= 0; i--) {
+			if (lines.get(i).getLineName().equals(subwayLine)) {
+				return i;
+			}
+		}
+		return -1; //station이 없는경우
+	}
 	//지하철 노선 등록
 	public boolean addSubwayLine(SubwayLine subwayLine) {
-		if (stations != null) {
-			for (SubwayLine s : lines) {
-				if (s.getLineName().equals(subwayLine.getLineName())) {
+		if (lines != null) {
+			if(findLineIdx(subwayLine.getLineName()) != -1) {
 					System.out.println("[ERROR] 이미 등록된 호선 이름입니다.");
 					return false;
 				}
 			}
 			lines.add(subwayLine);
 			System.out.println("[INFO] 호선이 등록되었습니다.");
-		}
 		return true;
 	}
 
 	//지하철 노선 삭제
 	public void deleteSubwayLine(String subwayLine) {
-		if (stations != null) {
-			int idx = 0;
-			for (SubwayLine s : lines) {
-				if (s.getLineName().equals(subwayLine)) {
-					lines.remove(idx);
-					return;
-				}
-				idx++;
+		if (lines != null) {
+			int idx = findLineIdx(subwayLine);
+			if(idx != -1) {
+				lines.remove(idx);
+				return;
 			}
-			System.out.println("[ERROR] 존재하지 않는 호선 이름입니다.");
 		}
+		System.out.println("[ERROR] 존재하지 않는 호선 이름입니다.");
 	}
 
 	//지하철 노선 등록할때 상행선도 같이 추가
@@ -165,22 +176,9 @@ public class Subway {
 
 	//지하철 노선에 역추가
 	public void addStationOnLine(String line, String station, int idx) {
-		int idxLine = -1;
-		int idxStation = -1;
-		int x = 0;
-		int y = 0;
-		for (SubwayStation s : stations) {
-			if (s.getStationName().equals(station)) {
-				idxStation = x;
-			}
-			x++;
-		}
-		for (SubwayLine s : lines) {
-			if (s.getLineName().equals(line)) {
-				idxLine = y;
-			}
-			y++;
-		}
+		int idxLine = findLineIdx(line);
+		int idxStation = findStationIdx(station);
+
 		if (idxLine == -1 || idxStation == -1) {
 			System.out.println("[ERROR] 잘못된 입력입니다.");
 			return;
@@ -192,21 +190,11 @@ public class Subway {
 
 	//지하철 노선에 역삭제
 	public void deleteStationOnLine(String line, String station) {
-		int idxLine = -1;
-		int idxStation = -1;
-		int x = 0;
-		int y = 0;
-		for (SubwayStation s : stations) {
-			if (s.getStationName().equals(station)) {
-				idxStation = x;
-			}
-			x++;
-		}
-		for (SubwayLine s : lines) {
-			if (s.getLineName().equals(line)) {
-				idxLine = y;
-			}
-			y++;
+		int idxLine = findLineIdx(line);
+		int idxStation = findStationIdx(station);
+		if (idxLine == -1 || idxStation == -1) {
+			System.out.println("[ERROR] 잘못된 입력입니다.");
+			return;
 		}
 		lines.get(idxLine).deleteStationsOnLine(stations.get(idxStation));
 		stations.get(idxStation).deleteStationLine(line);
