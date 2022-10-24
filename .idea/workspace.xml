@@ -4,9 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6382a338-82b8-4f91-a510-ff1eaaac222e" name="변경" comment="main이름 변경">
+    <list default="true" id="6382a338-82b8-4f91-a510-ff1eaaac222e" name="변경" comment="함수길이 15 넘지 않게 subway 리펙토링">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Subway.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Subway.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/SubwayLine.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/SubwayLine.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/메모용.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/메모용.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -78,7 +80,14 @@
       <option name="project" value="LOCAL" />
       <updated>1666602207946</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="함수길이 15 넘지 않게 subway 리펙토링">
+      <created>1666606176300</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1666606176300</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -98,7 +107,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="1차 완성 (디폴트 수정)" />
     <MESSAGE value="main이름 변경" />
-    <option name="LAST_COMMIT_MESSAGE" value="main이름 변경" />
+    <MESSAGE value="함수길이 15 넘지 않게 subway 리펙토링" />
+    <option name="LAST_COMMIT_MESSAGE" value="함수길이 15 넘지 않게 subway 리펙토링" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

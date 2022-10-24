@@ -45,4 +45,13 @@ public class SubwayLine {
 			System.out.println("[INFO] " + station.getStationName());
 		}
 	}
+
+	public boolean findStationOnLine(String station) {
+		for (SubwayStation s : stationsOnLine) {
+			if (s.getStationName().equals(station)) {
+				return true;
+			}
+		}
+		return false;
+	}
 }
